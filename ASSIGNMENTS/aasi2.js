@@ -2,7 +2,7 @@
 // //there are 3 function 
 
 function fetchdata(arr){
-    console.log("Feteching data from",arr);
+    console.log("Feteching data from",arr)
     return new Promise((res,rej)=>{
         setTimeout(() => {
             const a = arr.map((elem)=>{
@@ -10,7 +10,7 @@ function fetchdata(arr){
             })
             
              res(a)
-        }, 2000);
+        }, 21000);
        
     })
     
@@ -32,13 +32,34 @@ function analysedata(arr2){
         resolve({sum,avg})
     })
 }
-fetchdata([2,3,4,-5])
-.then((result) => {
-    console.log(result)
-    return analysedata(result)
-}).then((sum_average) => {
-    console.log({sum_average});
-}).catch((error)=>{
-    console.log("THE GIVEN DATA HAS NEGATIVE NUMBER",error);
-})
+//first way of using it 
+// function processdat(array){
+//     console.log("LETS START THE PROCESSING");
+//     return fetchdata(array)
+//     .then((result) => {
+//         console.log(result)
+//         return analysedata(result)
+//     }).then((sum_average) => {
+//         console.log("Sum and Average of",sum_average);
+//     }).catch((error)=>{
+//         console.log("THE GIVEN DATA HAS NEGATIVE NUMBER",error);
+//     })
+    
+// }
+
+//second way using Async Await
+processdat([2,3,4,5,6])
+console.time()
+
+async function processdat(array){
+    console.log("LETS START THE PROCESSING",array);
+    const a = await fetchdata(array)
+    console.log(a);
+    const b = await analysedata(a)
+    console.log("sum and average",b);
+    console.timeEnd()
+    return b
+   
+    
+}
 
