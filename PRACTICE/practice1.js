@@ -1,14 +1,9 @@
-function shubham(arr){
-    return new Promise((res,rej)=>{
-
-        const a = arr.map((elem)=>{
-            return elem*elem
-        })
-        return res(a)
-    })
-    
+function shub(arr){
+   for(i in arr){
+      if(arr[i]<0){
+         console.log("ok");
+      }
+   }
 }
-shubham([2,3,4,5,6])
-.then((val)=>{
-    console.log(val);
-})
+
+shub([2,-3,4,5])
