@@ -1,4 +1,9 @@
-function fetchseq(url){
-    fetch(url)
+class funcntion {
+
+    constructor(){
+        this.name="shubham"
+        this.place="ampa"
+    }
+
+    
 }
-console.log(fetchseq([www.google.com,www.gamil.com]));
