@@ -1,0 +1,7 @@
+var sortedSquares = function(nums) {
+    const a = nums.map((elem)=>elem*elem)
+ 
+    return a.sort()
+};
+
+console.log(sortedSquares([-4,-1,0,3,10]));
