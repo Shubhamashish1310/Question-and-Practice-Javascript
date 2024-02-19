@@ -1,7 +1,31 @@
-var sortedSquares = function(nums) {
-    const a = nums.map((elem)=>elem*elem)
+// var sortedSquares = function(nums) {
+//     const a = nums.map((elem)=>elem*elem)
  
-    return a.sort()
-};
+//     return a.sort((x,y)=>x-y)
+// };
 
-console.log(sortedSquares([-4,-1,0,3,10]));
+// console.log(sortedSquares([-4,-1,0,3,10]));
+
+
+
+var sortedSquares = function (nums) {
+    let n = nums.length
+   let result = []
+  
+   let left = 0;
+   let right = n- 1;
+   for (let i = n - 1; i>=0; i--) {
+       if (nums[left]**2 > nums[right]**2) {
+           result[i].push(nums[left]**2)
+           left++
+       }
+       else{
+           result[i].push(nums[right]**2)
+           right--
+       }
+      
+   }
+   return result
+}
+
+console.log(sortedSquares([-4,-1,0,3,10]))
