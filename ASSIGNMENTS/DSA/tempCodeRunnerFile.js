@@ -1,10 +1,19 @@
-function reverseString(arr){
-    let n = arr.length;
-    for(let i =0;i<n/2;i++){
-        let temp = arr[i];
-        arr[i]=arr[n-1-i]
-        arr[n-1-i]=temp
-        
-    }
-    return arr
-}
+var twoSum = function(nums, target) {
+//     let m = {};
+//     for(let i =0;i<nums.length;i++){
+//         if(m[nums[i]]){
+//             m[nums[i]]+=1;
+//         }
+//         else{
+//              m[nums[i]]=1;
+//         }
+//     }
+
+//     for(let i =0;i<nums.length;i++){
+//         const res = target - nums[i]
+//            if(res !== undefined){
+//               return [i,m[res]]
+//            }
+//     }
+//     return []
+// };
