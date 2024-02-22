@@ -35,13 +35,13 @@ console.log(reverseString(['s','h','u','b','h','a','m']));
 
 //reverse a string
 
-function reverseString(arr){
-    let n = arr.length;
-    for(let i =0;i<n/2;i++){
-        let temp = arr[i];
-        arr[i]=arr[n-1-i]
-        arr[n-1-i]=temp
+// function reverseString(arr){
+//     let n = arr.length;
+//     for(let i =0;i<n/2;i++){
+//         let temp = arr[i];
+//         arr[i]=arr[n-1-i]
+//         arr[n-1-i]=temp
         
-    }
-    return arr
-}
+//     }
+//     return arr
+// }
