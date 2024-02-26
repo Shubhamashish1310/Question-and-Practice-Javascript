@@ -1,12 +1,8 @@
-let twoSum = function(nums, target) {
-    let n = nums.length;
-    for(let i = 0; i <= n-2; i++) {
-        for(let j = i + 1; j < n; j++) {
-            if(nums[i] + nums[j] == target) {
-                return [i, j];
-            }
-        }
-    }
-};
+var merge = function(nums1,nums2) {
+    nums1.concat(nums2)
+    return nums1.sort((a,b)=>a-b)
+  };
 
-console.log(twoSum([3,2,4],6));
+  console.log(merge([1,2,3],[2,5,6]));
+
+
