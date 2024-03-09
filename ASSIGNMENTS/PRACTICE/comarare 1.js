@@ -15,6 +15,7 @@ var sortArray = function(nums) {
         result[k] = left[i];
         i++;
         k++;
+        
       } else {
         result[k] = right[j];
         j++;
