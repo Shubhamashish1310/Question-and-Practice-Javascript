@@ -1,14 +1,26 @@
-function bubblesortusingrecursion(arr){
-    let n = arr.length
-    if(arr[n-2]<=arr[n-1]){
-        return arr
+function bubbleSort(arr, n) {
+    if (n === 1) {
+        return; // Base case: If array size is 1, return
     }
-    // let temp = arr[n-1]
-    // arr[n-1] = arr[n-2]
-    // arr[n-2] = temp
-    [arr[n-1],arr[n-2]] = [arr[n-2],arr[n-1]]
-    return bubblesortusingrecursion(arr)
-    
+
+    let swapped = false;
+    for (let i = 0; i < n - 1; i++) {
+        if (arr[i] > arr[i + 1]) {
+            [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]]; // Swap adjacent elements
+            swapped = true;
+        }
+    }
+
+    if (!swapped) {
+        return; // No swaps in this pass, array is already sorted
+    }
+
+    bubbleSort(arr, n - 1); // Recur for the remaining elements
 }
 
-console.log(bubblesortusingrecursion([5,4,3,2,1,0]));
+// Example usage
+const arr = [64, 34, 25, 12, 22, 11, 90];
+bubbleSort(arr, arr.length);
+
+console.log("Sorted array:");
+console.log(arr);
