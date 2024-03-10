@@ -1,7 +1,3 @@
-
-    // if (m === 0) {
-    //     for (let i = 0; i < n; i++) {
-    //       nums1[i] = nums2[i];
-    //     }
-    //     return nums1;
-    //   }
+let temp = arr[n-1]
+    // arr[n-1] = arr[n-2]
+    // arr[n-2] = temp
