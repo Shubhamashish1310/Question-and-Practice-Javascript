@@ -15,8 +15,10 @@ function lowerbond(arr,x){
             ans = mid
             right = mid-1
         }
+
+       
     }
     return ans
 }
 
-console.log(lowerbond([1,2,2,3,4,5],2));
+console.log(lowerbond([5,7,7,8,8,10],8));
