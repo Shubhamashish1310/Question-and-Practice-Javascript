@@ -58,7 +58,7 @@ var searchRange = function(arr, x) {
     }
   
     // Reset left and right for finding the last occurrence
-    left = ans[0];
+    left = 0;
     right = n - 1;
   
     // Use <= for last occurrence search
@@ -74,6 +74,10 @@ var searchRange = function(arr, x) {
   
     return ans;
   };
+
+  console.log(searchRange([1,1,2,2,3,4],1));\
+
+  nice
   
   
   
