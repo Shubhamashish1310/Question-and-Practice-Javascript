@@ -1,6 +1,6 @@
 var intersection = function(nums1, nums2) {
-    const freqMap1 = {};
-    const freqMap2 = {};
+    const freqMap1 = {...0};
+    const freqMap2 = {...0};
     
     // Populate frequency map for nums1
     for (const num of nums1) {
@@ -18,7 +18,7 @@ var intersection = function(nums1, nums2) {
     const keys1 = Object.keys(freqMap1);
     for (let k =0;k<keys1.length;k++) {
         // Check if the key exists in freqMap2
-        if (nums2[k]) {
+        if (freqMap2[keys1[k]]) {
             result.push((keys1[k]-"0"));
         }
     }

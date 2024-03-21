@@ -1,3 +1,1 @@
-for (const num of nums2) {
-    //     freqMap2[num] = (freqMap2[num] || 0) + 1;
-    // }
+let k =0;k<keys1.length;k++
