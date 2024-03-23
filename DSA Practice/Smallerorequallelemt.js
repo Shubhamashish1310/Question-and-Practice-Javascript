@@ -24,9 +24,10 @@
 
 function smallerOrEqualElements(A, B) {
     let low = 0;
-    let high = A.length - 1;//
+    let high = A.length - 1; //
 
-    // Initialize the result variable
+
+    // Initialize the result to 0
     let count = 0;
 
     // Binary search to find the count of elements less than or equal to B
