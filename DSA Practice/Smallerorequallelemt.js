@@ -24,7 +24,7 @@
 
 function smallerOrEqualElements(A, B) {
     let low = 0;
-    let high = A.length - 1;
+    let high = A.length - 1;//
 
     // Initialize the result variable
     let count = 0;
