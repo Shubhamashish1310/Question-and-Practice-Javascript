@@ -1,14 +1,28 @@
-const a = [2,3,4,5]
+function b (aarr){
+    let n = aarr.length
 
-for(let i =0;i<a.length;i++){
-    console.log(a[i],i);
+    let low =0
+    let high = n-1
+
+    while(low<=high){
+
+        let mid = Math.floor(low+(high-low)/2)
+
+        if(aarr[mid]>aarr[mid+1]){
+
+            high = mid-1
+
+        }
+        
+        else if(aarr[mid]<aarr[mid+1]){
+
+            low = mid+1
+        }
+    }
+
+    return low
+
 }
 
-for(i of a){
-    console.log(i);
-}
-
-for(i in a){
-    console.log(i);
-}
+console.log(b([4,5,6,7,0,1,2]));
     
