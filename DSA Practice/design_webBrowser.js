@@ -1,7 +1,7 @@
 var Node = function(val, next, pre) {
     this.val = val;
-    this.next = null;
-    this.pre = null;
+    this.next = next;
+    this.pre = pre;
 }
 
 /**
