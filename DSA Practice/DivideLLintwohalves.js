@@ -18,8 +18,21 @@ class Node {
     const middle = slow;
     slow.next = null;
   
-    // Return the two halves of the linked list
-    return [head, middle];
+    // turn the twot
+    let prev = null;
+    let current = middle
+    let next = null;
+
+    while (current) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+
+    return [middle, prev]; // middle = prev;
+  
+    
   }
   
   // Example usage:
