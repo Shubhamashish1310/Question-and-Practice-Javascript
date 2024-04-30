@@ -99,7 +99,6 @@ var levelOrder = function(root) {
     let levelArray = new Array();
     while(!qu.isEmpty()) {
         const curr = qu.front();
-        qu.dequeue();
         if(curr == null) {
             // this shows end of the last level
             if(!qu.isEmpty()) {
@@ -124,7 +123,7 @@ var levelOrder = function(root) {
                 qu.enqueue(curr.right);
             }
         }
-        
+        qu.dequeue(); 
     }
         return result;
     
