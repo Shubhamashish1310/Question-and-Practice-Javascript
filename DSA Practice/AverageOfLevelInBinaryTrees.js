@@ -1,3 +1,15 @@
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
 class Node {
     constructor(data) {
         this.data = data;
@@ -90,7 +102,7 @@ class CustomQueue {
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var levelOrder = function(root) {
+var averageOfLevels = function(root) {
     if(root == null) return [];
     const qu = new CustomQueue();
     qu.enqueue(root);
@@ -101,20 +113,22 @@ var levelOrder = function(root) {
         const curr = qu.front();
         if(curr == null) {
             qu.dequeue();
-            // this shows end of the last level
             if(!qu.isEmpty()) {
-                // if the queue is not empty then in the queue we have all the elements
-                // of the next level
+                let sum =0;
+                for(let s of levelArray){
+                    sum+=s
+                }
+                result.push(sum/levelArray.length);
                 
-                // before we refresh our level array it has data of last level
-                result.push(levelArray);
-                
-                qu.enqueue(null); // we can use this null as a marker of end of current level
+                qu.enqueue(null);0
                 levelArray = new Array();
             } else {
                 qu.dequeue();
-                // when queue is empty
-                result.push(levelArray);
+                let sum =0;
+                for(let s of levelArray){
+                    sum+=s
+                }
+                result.push(sum/levelArray.length);
             }
            
         } 
@@ -132,20 +146,6 @@ var levelOrder = function(root) {
         return result;
     
 };
-// Sample Binary Tree
-function TreeNode(val, left, right) {
-    this.val = val === undefined ? 0 : val;
-    this.left = left === undefined ? null : left;
-    this.right = right === undefined ? null : right;
-  }
-  
-  const root = new TreeNode(3);
-  root.left = new TreeNode(9);
-  root.right = new TreeNode(20);
-  root.right.left = new TreeNode(15);
-  root.right.right = new TreeNode(7);
-  
-  // Call levelOrder function
-  const levelTraversal = levelOrder(root);
-  console.log(levelTraversal); // Output: [[3], [9, 20], [15, 7]]
-  
+
+    
+
