@@ -91,6 +91,7 @@ class CustomQueue {
  * @return {number[][]}
  */
 var levelOrder = function(root) {
+    let i = 0;
     if(root == null) return [];
     const qu = new CustomQueue();
     qu.enqueue(root);
@@ -103,6 +104,7 @@ var levelOrder = function(root) {
             qu.dequeue();
             // this shows end of the last level
             if(!qu.isEmpty()) {
+                
                 // if the queue is not empty then in the queue we have all the elements
                 // of the next level
                 
@@ -115,9 +117,11 @@ var levelOrder = function(root) {
                 qu.dequeue();
                 // when queue is empty
                 result.push(levelArray);
+                
             }
            
         } 
+        
          else {
             qu.dequeue();
             levelArray.push(curr.val);
@@ -127,7 +131,10 @@ var levelOrder = function(root) {
             if(curr.right) {
                 qu.enqueue(curr.right);
             }
+          
         } 
+        
+       
     }
         return result;
     
@@ -144,6 +151,8 @@ function TreeNode(val, left, right) {
   root.right = new TreeNode(20);
   root.right.left = new TreeNode(15);
   root.right.right = new TreeNode(7);
+  root.left.left = new TreeNode(16);
+  root.left.right = new TreeNode(17);
   
   // Call levelOrder function
   const levelTraversal = levelOrder(root);
