@@ -52,7 +52,7 @@ class LinkedList {
     }
 }
 
-class CustomQueue {
+class Queue {
     constructor() {
         this.ll = new LinkedList(); // we will create a brand new empty list
     }
@@ -76,9 +76,9 @@ class CustomQueue {
         return this.ll.getTail();
     }
 }
-
-
 /**
+ * 
+ * 
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
  *     this.val = (val===undefined ? 0 : val)
@@ -88,55 +88,54 @@ class CustomQueue {
  */
 /**
  * @param {TreeNode} root
- * @return {number[][]}
+ * @return {number}
  */
 var levelOrder = function(root) {
     if(root == null) return [];
-    const qu = new CustomQueue();
-    qu.enqueue(root);
-    qu.enqueue(null);
-    const result = [];
-    let levelArray = new Array();
-    while(!qu.isEmpty()) {
-        const curr = qu.front();
-        if(curr == null) {
-            qu.dequeue();
-            // this shows end of the last level
-            if(!qu.isEmpty()) {
-                
-                // if the queue is not empty then in the queue we have all the elements
-                // of the next level
-                
-                // before we refresh our level array it has data of last level
-                result.push(levelArray);
-                
-                qu.enqueue(null); // we can use this null as a marker of end of current level
-                levelArray = new Array();
-            } else {
-                qu.dequeue();
-                // when queue is empty
-                result.push(levelArray);
-                
+    let q = new Queue()
+    let answer = []
+    let lev= new Array()
+    q.enqueue(root)
+    q.enqueue(null)
+
+    while(!q.isEmpty()){
+        let curr = q.front();
+
+        if(curr!=null){
+            lev.push(curr.val)
+            q.dequeue()
+            if(curr.left){
+                q.enqueue(curr.left)
             }
-           
-        } 
-        
-         else {
-            qu.dequeue();
-            levelArray.push({val: curr.val,left:2*i+1,right:2*i+2});
-            if(curr.left) {
-                qu.enqueue(curr.left);
+            if(curr.right){
+                q.enqueue(curr.right)
             }
-            if(curr.right) {
-                qu.enqueue(curr.right);
+        }
+        else{
+             q.dequeue()
+            if(!q.isEmpty()){
+               let sum=0;
+               for(i of lev){
+                sum+=i
+               }
+               console.log(sum)
+                answer.push(sum)
+                q.enqueue(null)
+                lev = new Array()
             }
-          
-        } 
-        
-       
+            else{
+               let sum=0;
+               for(i of lev){
+                sum+=i
+               }
+               console.log(sum)
+                answer.push(sum)
+            }
+
+        }
     }
-        return result;
-    
+    let a = Math.max(...answer)
+return (Math.max(answer))
 };
 // Sample Binary Tree
 function TreeNode(val, left, right) {
