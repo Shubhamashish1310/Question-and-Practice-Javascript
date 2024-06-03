@@ -123,7 +123,7 @@ var levelOrder = function(root) {
         
          else {
             qu.dequeue();
-            levelArray.push({val: curr.val,left:2*i+1,right:2*i+2});
+            levelArray.push(curr.val);
             if(curr.left) {
                 qu.enqueue(curr.left);
             }
@@ -151,7 +151,7 @@ function TreeNode(val, left, right) {
   root.right.left = new TreeNode(15);
   root.right.right = new TreeNode(7);
   root.left.left = new TreeNode(16);
-  root.left.right = new TreeNode(17);
+  
   
   // Call levelOrder function
   const levelTraversal = levelOrder(root);
