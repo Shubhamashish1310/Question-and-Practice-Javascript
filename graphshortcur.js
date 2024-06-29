@@ -15,10 +15,10 @@ addEdge(0, 3, true);
 addEdge(4, 5, true);
 addEdge(5, 6, true);
 addEdge(6, 3, true);
-addEdge(1, 2);
-addEdge(2, 4);
-addEdge(2, 3);
-addEdge(4, 3);
+addEdge(1, 2); 
+addEdge(2, 4); 
+addEdge(2, 3); 
+addEdge(4, 3); 
 
 console.log(g);
 //testing something not related to question
